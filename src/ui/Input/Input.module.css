@@ -1,0 +1,112 @@
+.container_input {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 30px;
+
+	font-size: inherit;
+}
+
+.size_xs {
+	font-size: 16px;
+	width: 250px;
+}
+
+.size_sm {
+	font-size: 24px;
+	width: 363px;
+}
+
+.size_md {
+	font-size: 32px;
+	width: 476px;
+}
+
+.size_lg {
+	font-size: 40px;
+	width: 590px;
+}
+
+.size_xl {
+	font-size: 48px;
+	width: 703px;
+}
+
+.radius_xs {
+	border-radius: 0;
+}
+
+.radius_sm {
+	border-radius: 13%;
+}
+
+.radius_md {
+	border-radius: 26%;
+}
+
+.radius_lg {
+	border-radius: 39%;
+}
+
+.radius_xl {
+	border-radius: 50%;
+}
+
+.container_input_desc {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	font-size: 75%;
+}
+
+.input {
+	width: 100%;
+	max-width: 100%;
+	padding: 10px 20px 10px 2em;
+	border: 2px solid #858585; /* border теряет часть рамки при увеличении значения border-radius */
+
+	font-size: inherit;
+}
+
+.input::placeholder {
+	font-size: inherit;
+}
+
+.required {
+	color: red;
+}
+
+.submit_error {
+	color: red;
+	font-size: 75%;
+}
+
+.container_error {
+	width: 150px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.submit_valid {
+	color: green;
+	font-size: 75%;
+}
+
+.input_with_icon {
+	position: relative;
+}
+
+.icon_wrapper {
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: inherit;
+}
+
+.filled {
+	background-color: #9b9fa2;
+}
+
+.unstyled {
+	border-color: #ffffff;
+	background-color: #ffffff;
+}
