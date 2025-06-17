@@ -1,13 +1,12 @@
 import './styles/App.css';
 import {Route, Routes} from 'react-router-dom';
-import Navigation from './components/Navigation';
 import NotFoundPage from './pages/notFound';
 import {AuthProvider} from './context/authProvider/authProvider.tsx';
 import Signin from './pages/auth/login';
 import PrivateRoute from './components/PrivateRoute';
-import Logout from './components/Logout';
 import {lazy, Suspense} from 'react';
 import ErrorBoundary from './components/ErrorBoundary';
+import {MainLayout} from "./core/components/layouts/MainLayout.tsx";
 
 const HomePage = lazy(() => import('./pages/home'));
 const ListCharactersPage = lazy(() => import('./pages/characters'));
@@ -21,11 +20,8 @@ function App() {
   return (
     <>
       <AuthProvider>
-        <Navigation/>
-
-        <main className="content">
-          <Logout/>
-          <Routes>
+        <Routes>
+          <Route element={<MainLayout/>}>
             <Route path="/" element={<Suspense
               fallback={<div>Loading...</div>}><ErrorBoundary><HomePage/></ErrorBoundary></Suspense>}/>
             <Route path="/characters" element={<PrivateRoute><Suspense fallback={<div>Loading...</div>}><ErrorBoundary
@@ -45,8 +41,8 @@ function App() {
             <Route path="/login" element={<Suspense fallback={<div>Loading...</div>}><ErrorBoundary key="auth">
               <Signin/></ErrorBoundary></Suspense>}></Route>
             <Route path="*" element={<NotFoundPage/>}/>
-          </Routes>
-        </main>
+          </Route>
+        </Routes>
       </AuthProvider>
     </>
   )
